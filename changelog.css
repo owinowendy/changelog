@@ -1,58 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #304c4c;
+    box-sizing: border-box;
 }
 
-.changelog {
-    max-width: 800px;
-    margin: 20px auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color:mimi pink;
+}
+
+.changelog-container {
+    max-width: 600px;
+    margin: 40px auto;
     padding: 20px;
-    background: rgb(84, 150, 183);
-    border-radius: 8px;
+    background-color:thistle;
+    border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
     text-align: center;
-    color: #333;
 }
 
-.entry {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 5px solid #007BFF;
-    background: #f9f9f9;
-    border-radius: 5px;
-}
-
-h2 {
-    color: #007BFF;
+.changelog-container h2 {
     margin-bottom: 10px;
+    font-size: 24px;
 }
 
-ul {
-    list-style-type: disc;
+.changelog-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.changelog-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.changelog-item {
+    position: relative;
+    margin-bottom: 20px;
     padding-left: 20px;
 }
 
-li {
-    margin: 5px 0;
-    color: #555;
+.changelog-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
 }
 
-/* Responsive Design */
+.changelog-item::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background-color: #000;
+}
+
+.changelog-date {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.changelog-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.changelog-button:hover {
+    background-color: #333;
+}
+
 @media (max-width: 600px) {
-    .changelog {
-        padding: 15px;
+    .changelog-container {
+        padding: 10px;
     }
 
-    h1 {
-        font-size: 24px;
+    .changelog-item {
+        padding-left: 10px;
     }
 
-    h2 {
-        font-size: 18px;
+    .changelog-item::before {
+        left: -5px;
+    }
+
+    .changelog-item::after {
+        left: -1px;
     }
 }
+
